@@ -60,7 +60,9 @@ namespace Auth
                 }
                 else
                 {
-                    MessageBox.Show("Succesfull", "Success", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                    //MessageBox.Show("Succesfull", "Success", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                    Form3 form3 = new Form3();
+                    form3.Show();
                 }
             }
             else

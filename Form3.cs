@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Auth.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,32 @@ namespace Auth
         public Form3()
         {
             InitializeComponent();
+        }
+
+        private void create_btn_Click(object sender, EventArgs e)
+        {
+            CreateForm createForm = new CreateForm();
+            createForm.Show();
+        }
+
+        private void panel_lists_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void read_btn_Click(object sender, EventArgs e)
+        {
+            var magazins = MemoryService.Magazins.ToList();
+
+            if (magazins.Count > 0)
+            {
+                textBox1.Text = "";
+                foreach (var magaz in magazins)
+                {
+                    textBox1.Text += "\n" + " [Name : " + magaz.Name + " Description : " + magaz.Description + "]";
+                }
+            }
+
         }
     }
 }
